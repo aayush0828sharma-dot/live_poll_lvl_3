@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+
+  /* ─── Palette ─────────────────────────────────────────── */
+  --bg-0:           #f5f6fb;
+  --bg-1:           #eef0f8;
+  --surface:        #ffffff;
+  --surface-2:      #f8f9fd;
+  --surface-3:      #f1f3fa;
+
+  --border:         #e5e8f1;
+  --border-strong:  #d3d8e6;
+  --border-focus:   #6366f1;
+
+  --text-1:         #0f172a;
+  --text-2:         #475569;
+  --text-3:         #94a3b8;
+  --text-on-dark:   #f8fafc;
+
+  --accent:         #6366f1;   /* indigo */
+  --accent-2:       #8b5cf6;   /* violet */
+  --accent-3:       #ec4899;   /* pink */
+  --accent-soft:    #eef2ff;
+  --accent-deep:    #4f46e5;
+  --gradient-accent: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  --gradient-soft:   linear-gradient(135deg, #eef2ff 0%, #faf5ff 50%, #fdf2f8 100%);
+  --gradient-mesh:
+    radial-gradient(at 12% 18%, rgba(99,102,241,0.18) 0px, transparent 50%),
+    radial-gradient(at 88% 12%, rgba(236,72,153,0.14) 0px, transparent 50%),
+    radial-gradient(at 70% 92%, rgba(139,92,246,0.18) 0px, transparent 50%),
+    radial-gradient(at 8% 88%, rgba(56,189,248,0.12) 0px, transparent 50%);
+
+  --success:        #10b981;
+  --success-soft:   #d1fae5;
+  --warning:        #f59e0b;
+  --warning-soft:   #fef3c7;
+  --danger:         #ef4444;
+  --danger-soft:    #fee2e2;
+  --info:           #0ea5e9;
+  --info-soft:      #e0f2fe;
+
+  /* ─── Radii ───────────────────────────────────────────── */
+  --r-sm:   0.5rem;
+  --r-md:   0.75rem;
+  --r-lg:   1rem;
+  --r-xl:   1.25rem;
+  --r-2xl:  1.5rem;
+  --r-pill: 999px;
+
+  /* ─── Shadows ─────────────────────────────────────────── */
+  --shadow-xs: 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-sm: 0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-md: 0 4px 12px rgba(15,23,42,0.07), 0 2px 4px rgba(15,23,42,0.04);
+  --shadow-lg: 0 12px 32px rgba(15,23,42,0.10), 0 4px 8px rgba(15,23,42,0.04);
+  --shadow-glow: 0 8px 28px rgba(99,102,241,0.28);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root { min-height: 100vh; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-1);
+  background:
+    var(--gradient-mesh),
+    linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root { width: 100%; }
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+a:hover { color: var(--accent-deep); text-decoration: underline; }
+
+::selection { background: var(--accent-soft); color: var(--text-1); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+  border: 2px solid var(--bg-0);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
