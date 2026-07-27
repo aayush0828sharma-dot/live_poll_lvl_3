@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portside — Studio Ops</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
 /* ============================================================
    PORTSIDE THEME — token system
-   Same variable names/roles as the source file. Only the values
-   (palette, type, radii, shadows) have been re-cut, so anything
-   built against these custom properties keeps working unchanged.
+   Same variable names/roles as your original tokens file.
+   Only the values (palette, type, radii, shadows) changed, so
+   anything referencing these custom properties keeps working.
    ============================================================ */
 :root {
   color-scheme: light;
@@ -63,7 +56,7 @@
   --shadow-glow: 0 8px 28px rgba(14,107,100,0.28);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { min-height: 100vh; }
+html, body, #root { min-height: 100vh; }
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Manrope', system-ui, -apple-system, sans-serif;
@@ -78,13 +71,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
-button, input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; }
-a { color: var(--accent); text-decoration: none; font-weight: 600; }
+#root { width: 100%; }
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
 a:hover { color: var(--accent-deep); text-decoration: underline; }
 ::selection { background: var(--accent-soft); color: var(--text-1); }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; border: 2px solid var(--bg-0); }
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+  border: 2px solid var(--bg-0);
+}
 ::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
 :focus-visible { outline: 2px solid var(--border-focus); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) {
@@ -93,235 +99,3 @@ a:hover { color: var(--accent-deep); text-decoration: underline; }
 
 .display { font-family: 'Fraunces', Georgia, serif; }
 .mono { font-family: 'IBM Plex Mono', monospace; }
-
-/* ─── Layout shell ─────────────────────────────────────────── */
-.wrap { max-width: 1080px; margin: 0 auto; padding: 2.75rem 1.5rem 5rem; }
-.topbar {
-  display: flex; align-items: center; justify-content: space-between;
-  padding-bottom: 2rem; border-bottom: 1px solid var(--border);
-  margin-bottom: 2.75rem;
-}
-.brand { display: flex; align-items: center; gap: 0.65rem; }
-.brand-mark {
-  width: 34px; height: 34px; border-radius: 50%;
-  background: var(--gradient-accent);
-  position: relative;
-  box-shadow: var(--shadow-glow);
-}
-.brand-mark::before {
-  content: ''; position: absolute; inset: 7px;
-  border-radius: 50%; border: 2px solid rgba(255,255,255,0.75);
-}
-.brand-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
-.brand-sub { font-size: 0.75rem; color: var(--text-3); font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.04em; text-transform: uppercase; }
-.nav-pills { display: flex; gap: 0.4rem; background: var(--surface-3); padding: 0.3rem; border-radius: var(--r-pill); border: 1px solid var(--border); }
-.nav-pill {
-  padding: 0.45rem 0.95rem; border-radius: var(--r-pill); font-size: 0.825rem; font-weight: 600;
-  color: var(--text-2); cursor: pointer; transition: background 0.15s, color 0.15s; border: none; background: none;
-}
-.nav-pill.active { background: var(--surface); color: var(--accent-deep); box-shadow: var(--shadow-xs); }
-.nav-pill:hover:not(.active) { color: var(--text-1); }
-
-/* ─── Hero metric strip, signature "porthole" motif ────────── */
-.hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 2rem; align-items: center; margin-bottom: 3rem; }
-.hero-copy .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-.hero-copy h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 2.35rem; line-height: 1.12; letter-spacing: -0.015em; margin: 0.6rem 0 0.85rem; }
-.hero-copy p { color: var(--text-2); max-width: 34ch; }
-
-.porthole {
-  position: relative; width: 210px; height: 210px; margin: 0 auto;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 10px solid var(--surface-2);
-  box-shadow: 0 0 0 1px var(--border), var(--shadow-lg);
-  display: flex; align-items: center; justify-content: center;
-}
-.porthole::before {
-  content: ''; position: absolute; inset: -10px; border-radius: 50%;
-  border: 2px solid var(--accent-3); opacity: 0.55;
-}
-.porthole::after {
-  content: ''; position: absolute; inset: 14px; border-radius: 50%;
-  border: 1px dashed var(--border-strong);
-}
-.porthole-inner { text-align: center; }
-.porthole-inner .num { font-family: 'Fraunces', serif; font-weight: 600; font-size: 2.6rem; letter-spacing: -0.02em; color: var(--accent-deep); }
-.porthole-inner .label { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.15rem; }
-
-/* ─── Section heading ───────────────────────────────────────── */
-.section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.1rem; }
-.section-head h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.2rem; letter-spacing: -0.01em; }
-.section-head .count { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: var(--text-3); }
-
-/* ─── Project cards ─────────────────────────────────────────── */
-.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; }
-.card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg);
-  padding: 1.25rem; box-shadow: var(--shadow-sm); transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
-.card h3 { font-size: 0.98rem; font-weight: 700; }
-.card p { color: var(--text-2); font-size: 0.85rem; margin-bottom: 0.9rem; }
-.card-foot { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--text-3); font-family: 'IBM Plex Mono', monospace; }
-.bar { height: 6px; border-radius: var(--r-pill); background: var(--surface-3); overflow: hidden; margin-bottom: 0.9rem; }
-.bar > span { display: block; height: 100%; background: var(--gradient-accent); border-radius: var(--r-pill); }
-
-.badge {
-  display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.6rem;
-  border-radius: var(--r-pill); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.01em;
-}
-.badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-.badge.success { background: var(--success-soft); color: var(--success); }
-.badge.warning { background: var(--warning-soft); color: var(--warning); }
-.badge.danger  { background: var(--danger-soft);  color: var(--danger); }
-.badge.info    { background: var(--info-soft);    color: var(--info); }
-
-/* ─── Two-column: form + alerts ─────────────────────────────── */
-.split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1.5rem; }
-.panel {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl);
-  padding: 1.5rem; box-shadow: var(--shadow-sm);
-}
-.panel h2 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 1rem; }
-.field { margin-bottom: 1rem; }
-.field label { display: block; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--text-2); }
-.field input, .field select, .field textarea {
-  width: 100%; padding: 0.65rem 0.8rem; border-radius: var(--r-md);
-  border: 1.5px solid var(--border); background: var(--surface-2); transition: border-color 0.15s, box-shadow 0.15s;
-}
-.field input:focus, .field select:focus, .field textarea:focus {
-  outline: none; border-color: var(--border-focus); box-shadow: 0 0 0 3px var(--accent-soft);
-}
-.field textarea { resize: vertical; min-height: 72px; }
-
-.btn-row { display: flex; gap: 0.6rem; margin-top: 0.4rem; }
-.btn {
-  padding: 0.65rem 1.15rem; border-radius: var(--r-md); font-weight: 700; font-size: 0.875rem;
-  border: 1.5px solid transparent; cursor: pointer; transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.15s;
-}
-.btn:active { transform: translateY(1px); }
-.btn-primary { background: var(--gradient-accent); color: var(--text-on-dark); box-shadow: var(--shadow-glow); }
-.btn-primary:hover { filter: brightness(1.04); }
-.btn-secondary { background: var(--surface); border-color: var(--border-strong); color: var(--text-1); }
-.btn-secondary:hover { border-color: var(--accent); color: var(--accent-deep); }
-.btn-ghost { background: none; color: var(--text-2); }
-.btn-ghost:hover { color: var(--text-1); background: var(--surface-3); }
-
-.alert { display: flex; gap: 0.7rem; padding: 0.85rem 1rem; border-radius: var(--r-md); margin-bottom: 0.75rem; font-size: 0.85rem; }
-.alert:last-child { margin-bottom: 0; }
-.alert strong { display: block; font-size: 0.85rem; margin-bottom: 0.1rem; }
-.alert.success { background: var(--success-soft); color: var(--accent-deep); }
-.alert.warning { background: var(--warning-soft); color: #7a5514; }
-.alert.danger  { background: var(--danger-soft);  color: #7c2c1c; }
-.alert.info    { background: var(--info-soft);    color: #1f5a7a; }
-
-footer { text-align: center; margin-top: 3rem; color: var(--text-3); font-size: 0.8rem; }
-
-@media (max-width: 760px) {
-  .hero, .split { grid-template-columns: 1fr; }
-  .card-grid { grid-template-columns: 1fr; }
-  .topbar { flex-direction: column; gap: 1rem; align-items: flex-start; }
-}
-</style>
-</head>
-<body>
-<div class="wrap">
-
-  <div class="topbar">
-    <div class="brand">
-      <div class="brand-mark"></div>
-      <div>
-        <div class="brand-name">Portside</div>
-        <div class="brand-sub">Studio Ops</div>
-      </div>
-    </div>
-    <div class="nav-pills">
-      <button class="nav-pill active">Overview</button>
-      <button class="nav-pill">Projects</button>
-      <button class="nav-pill">Clients</button>
-      <button class="nav-pill">Billing</button>
-    </div>
-  </div>
-
-  <div class="hero">
-    <div class="hero-copy">
-      <div class="eyebrow">Week 31 — On track</div>
-      <h1>Everything the studio is steering, in one panel.</h1>
-      <p>Live status on active projects, client replies waiting on you, and what ships this week.</p>
-      <div class="btn-row">
-        <button class="btn btn-primary">New project</button>
-        <button class="btn btn-secondary">Invite teammate</button>
-      </div>
-    </div>
-    <div class="porthole">
-      <div class="porthole-inner">
-        <div class="num">94%</div>
-        <div class="label">On-time delivery</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-head">
-    <h2>Active projects</h2>
-    <span class="count">3 of 3 shown</span>
-  </div>
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-top"><h3>Fathom — brand refresh</h3><span class="badge success">On track</span></div>
-      <p>Logo system, type scale, and launch site for the Fathom relaunch.</p>
-      <div class="bar"><span style="width:72%"></span></div>
-      <div class="card-foot"><span>72% complete</span><span>Due Aug 14</span></div>
-    </div>
-    <div class="card">
-      <div class="card-top"><h3>Norr App — v2 redesign</h3><span class="badge warning">Needs review</span></div>
-      <p>Onboarding flow and dashboard rebuild for the Norr mobile app.</p>
-      <div class="bar"><span style="width:45%"></span></div>
-      <div class="card-foot"><span>45% complete</span><span>Due Aug 22</span></div>
-    </div>
-    <div class="card">
-      <div class="card-top"><h3>Halyard — pitch deck</h3><span class="badge danger">Blocked</span></div>
-      <p>Investor deck waiting on updated revenue figures from the client.</p>
-      <div class="bar"><span style="width:20%"></span></div>
-      <div class="card-foot"><span>20% complete</span><span>Due Aug 5</span></div>
-    </div>
-  </div>
-
-  <div class="split">
-    <div class="panel">
-      <h2>Log a client update</h2>
-      <div class="field">
-        <label for="proj">Project</label>
-        <select id="proj">
-          <option>Fathom — brand refresh</option>
-          <option>Norr App — v2 redesign</option>
-          <option>Halyard — pitch deck</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="stat">Status</label>
-        <input id="stat" type="text" placeholder="e.g. Sent revised logo options" />
-      </div>
-      <div class="field">
-        <label for="notes">Notes</label>
-        <textarea id="notes" placeholder="What changed, what's next"></textarea>
-      </div>
-      <div class="btn-row">
-        <button class="btn btn-primary">Save update</button>
-        <button class="btn btn-ghost">Cancel</button>
-      </div>
-    </div>
-
-    <div class="panel">
-      <h2>Needs your attention</h2>
-      <div class="alert success"><span>✓</span><div><strong>Fathom assets approved</strong>Client signed off on the type scale this morning.</div></div>
-      <div class="alert warning"><span>!</span><div><strong>Norr review overdue</strong>Design review has been open for 4 days.</div></div>
-      <div class="alert danger"><span>×</span><div><strong>Halyard is blocked</strong>Waiting on figures before the deck can move.</div></div>
-      <div class="alert info"><span>i</span><div><strong>New teammate starting Monday</strong>Add them to active project channels.</div></div>
-    </div>
-  </div>
-
-  <footer>Portside · design tokens re-cut, structure untouched</footer>
-</div>
-</body>
-</html>
