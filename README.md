@@ -59,7 +59,7 @@ Below is a mobile view screenshot demonstrating the responsive layout on narrow 
 ## Verifiable Contract Call
 
 - Deploy tx hash: `0e1e13467216b3056b5351fd7d10ea59e2bc3d3000056fe236e42d5e2cb4bcdd`
-- Stellar Expert link: https://stellar.expert/explorer/testnet/tx/0e1e13467216b3056b5351fd7d10ea59e2bc3d3000056fe236e42d5e2cb4bcdd
+- Stellar Expert link: https://stellar.expert/explorer/testnet/tx/3a84f38600a146a59d49e0aa7f6a20312197d37874761c351d4977c09a32deb3
 - Sample `create_poll` tx hash: `e5a4df2c3ef97235d1b33ebe043cb66ab5642d53f0319caabc9f98e2239712c8`
 - Stellar Expert link: https://stellar.expert/explorer/testnet/tx/e5a4df2c3ef97235d1b33ebe043cb66ab5642d53f0319caabc9f98e2239712c8
 
