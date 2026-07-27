@@ -5,8 +5,8 @@ LivePoll is a mini end-to-end Stellar + Soroban dApp: a multi-wallet polling app
 ## Level 3 Submission Checklist (fill before submitting)
 
 - Live demo link: https://live-poll-lvl-3.vercel.app/
-- Demo video (1 minute) link: https://drive.google.com/file/d/1mFznU8JuuxYWcu140-rXJpEqO5WCSTW_/view?usp=sharing Test output screenshot (3+ passing tests): ✅ (see below)
-- Public GitHub repo link: https://github.com/awanind5924-alt/online-live-poll-3
+- Demo video (1 minute) link: https://drive.google.com/file/d/1WGOiz-Tv2YhMqVpCB1r23qnU_02obftO/view?usp=sharing Test output screenshot (3+ passing tests): ✅ (see below)
+- Public GitHub repo link: https://github.com/aayush0828sharma-dot/live_poll_lvl_3
 - 3+ meaningful commits for Level 3: ✅
 
 
@@ -35,19 +35,19 @@ This project demonstrates:
 ## Screenshots
 
 🏠 Home Page
-      ![Screenshot 2026-06-18 210151.png](screenshot/Screenshot%202026-06-18%20210151.png)
+    ![Screenshot 2026-07-27 225428.png](screenshots/Screenshot%202026-07-27%20225428.png)  
 📝 Create Poll
-      ![Screenshot 2026-06-18 210214.png](screenshot/Screenshot%202026-06-18%20210214.png)
+    ![Screenshot 2026-07-27 225442.png](screenshots/Screenshot%202026-07-27%20225442.png)  
 🗳️ Voting
-    ![Screenshot 2026-06-18 210545.png](screenshot/Screenshot%202026-06-18%20210545.png)
+    ![Screenshot 2026-07-27 225501.png](screenshots/Screenshot%202026-07-27%20225501.png)
 ✅ CI/CD
-    ![Screenshot 2026-06-18 205459.png](screenshot/Screenshot%202026-06-18%20205459.png)
+    ![Screenshot 2026-07-27 225639.png](screenshots/Screenshot%202026-07-27%20225639.png)
 
 ## Mobile responsive screenshots
 
 Below is a mobile view screenshot demonstrating the responsive layout on narrow screens. Replace the placeholder with a real phone-sized screenshot captured from the dev tools or a device.
 
-![WhatsApp Image 2026-06-18 at 9.07.51 PM.jpeg](screenshot/WhatsApp%20Image%202026-06-18%20at%209.07.51%20PM.jpeg)
+![WhatsApp Image 2026-07-27 at 10.55.59 PM.jpeg](screenshots/WhatsApp%20Image%202026-07-27%20at%2010.55.59%20PM.jpeg)
 
 
 ## Deployed Contract
