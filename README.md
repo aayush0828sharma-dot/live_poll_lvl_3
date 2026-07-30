@@ -54,6 +54,28 @@ npm test
 npm run build
 ```
 
+Before creating the submission archive or pushing a submission commit, run:
+
+```bash
+npm run submission:check
+```
+
+This check confirms that the contract source and frontend integration files are
+present and Git-tracked, while the large `poll_contract/target/` build cache is
+excluded. Only `public/contracts/poll_contract.wasm` is retained as the runtime
+artifact.
+
+If this repository was created before the ignore rule was added, untrack the
+existing generated files once (the command does not delete local build output):
+
+```bash
+git rm -r --cached poll_contract/target
+git add .gitignore package.json scripts/verify-submission.mjs README.md
+npm run submission:check
+git commit -m "Exclude generated Soroban build files from submission"
+git push origin main
+```
+
 On Windows PowerShell, use the following source-presence check instead of `test -f`:
 
 ```powershell

@@ -1,0 +1,16 @@
+# Frontend dependencies and build output
+node_modules/
+dist/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Rust/Soroban build output. The source crate and the copied public WASM are
+# intentionally tracked; this cache is not submission evidence.
+poll_contract/target/
+
+# Project-local Cargo cache used for reproducible local verification
+.cargo-home/
+.npm-cache/

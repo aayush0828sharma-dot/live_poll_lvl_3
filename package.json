@@ -13,6 +13,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "node tests/run.mjs",
+    "submission:check": "node scripts/verify-submission.mjs",
     "contract:build": "cargo build --manifest-path poll_contract/Cargo.toml --target wasm32v1-none --release",
     "wasm:sync": "node scripts/sync-wasm.mjs",
     "contract:deploy": "node scripts/deploy-contract.mjs"

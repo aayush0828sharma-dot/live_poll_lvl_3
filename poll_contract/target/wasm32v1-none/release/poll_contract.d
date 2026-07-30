@@ -1,1 +1,0 @@
-/Users/rajivdubey/Documents/Coding/SJTM/Online-Live-Poll/poll_contract/target/wasm32v1-none/release/poll_contract.wasm: /Users/rajivdubey/Documents/Coding/SJTM/Online-Live-Poll/poll_contract/src/lib.rs
